@@ -13,3 +13,9 @@ bash
 git clone https://github.com/Global-Health-Engineering/rfid-controlled-charging.git ~/rfid-controlled-charging
 cd ~/rfid-controlled-charging
 bash src/scripts/setup.sh
+
+# Optional: remote access with Tailscale (recommended)
+curl -fsSL https://tailscale.com/install.sh | sh
+sudo tailscale up --ssh
+tailscale ip -4
+
