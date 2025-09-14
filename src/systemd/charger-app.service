@@ -1,0 +1,19 @@
+[Unit]
+Description=Prepaid charger web app
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+# Run the app from inside this repo
+WorkingDirectory=/home/acs/rfid-controlled-charging
+# EITHER use system python:
+ExecStart=/usr/bin/python3 src/charger_app.py
+# OR, if you later switch to a venv, change to:
+# ExecStart=/home/acs/charger-venv/bin/python src/charger_app.py
+
+Restart=on-failure
+User=root
+Group=root
+
+[Install]
+WantedBy=multi-user.target
